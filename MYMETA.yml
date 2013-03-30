@@ -25,4 +25,4 @@ requires:
   CAM::XML: 0
   Moose: 0
   perl: 5.006
-version: 0.01
+version: 0.02
