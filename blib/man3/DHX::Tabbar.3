@@ -130,103 +130,55 @@
 .if n .ad l
 .nh
 .SH "NAME"
-DHX::Tabbar \- The great new DHX::Tabbar!
+DHX::Tabbar \- XML generator for dhtmlxAccordion
 .SH "VERSION"
 .IX Header "VERSION"
 Version 0.01
 .SH "SYNOPSIS"
 .IX Header "SYNOPSIS"
-Quick summary of what the module does.
+use DHX::Tabbar;
 .PP
-Perhaps a little code snippet.
+my \f(CW$tabbar\fR = DHX::Tabbar\->new;
 .PP
-.Vb 1
-\&    use DHX::Tabbar;
-\&
-\&    my $foo = DHX::Tabbar\->new();
-\&    ...
+.Vb 10
+\&    $tabbar\->tab(
+\&        {
+\&            id => \*(Aqt1\*(Aq,
+\&            selected => \*(Aq1\*(Aq,
+\&            width => \*(Aq50\*(Aq,
+\&            text => \*(AqA\*(Aq
+\&        },
+\&        {
+\&            id => \*(Aqt2\*(Aq,
+\&            width => \*(Aq50\*(Aq,
+\&            text => \*(AqB\*(Aq
+\&        }
+\&    );
+\&    
+\&    $tabbar\->tab(
+\&        {
+\&            id => \*(Aqt3\*(Aq,
+\&            width => \*(Aq50\*(Aq,
+\&            text => \*(AqC\*(Aq
+\&        }
+\&    );
+\&    
+\&    print "Content\-type: application/xml; charset=utf8\en\en";
+\&    print $tabbar\->result;
 .Ve
-.SH "EXPORT"
-.IX Header "EXPORT"
-A list of functions that can be exported.  You can delete this section
-if you don't export anything, such as for a purely object-oriented module.
-.SH "SUBROUTINES/METHODS"
-.IX Header "SUBROUTINES/METHODS"
-.SS "function1"
-.IX Subsection "function1"
-.SS "function2"
-.IX Subsection "function2"
+.SH "INSTANCE METHODS"
+.IX Header "INSTANCE METHODS"
+.ie n .IP "$tabbar\->tab({foo_key => foo_value, bar_key => bar_value});" 4
+.el .IP "\f(CW$tabbar\fR\->tab({foo_key => foo_value, bar_key => bar_value});" 4
+.IX Item "$tabbar->tab({foo_key => foo_value, bar_key => bar_value});"
+Set tabs dhtmlxTabbar
+.ie n .IP "$tabbar\->result;" 4
+.el .IP "\f(CW$tabbar\fR\->result;" 4
+.IX Item "$tabbar->result;"
+get result xml dhtml.
+.SH "LICENSE"
+.IX Header "LICENSE"
+opensouce
 .SH "AUTHOR"
 .IX Header "AUTHOR"
-Lucas Tiago de Moraes, \f(CW\*(C`<lucastiagodemoraes at gmail.com>\*(C'\fR
-.SH "BUGS"
-.IX Header "BUGS"
-Please report any bugs or feature requests to \f(CW\*(C`bug\-dhx\-tabbar at rt.cpan.org\*(C'\fR, or through
-the web interface at http://rt.cpan.org/NoAuth/ReportBug.html?Queue=DHX\-Tabbar <http://rt.cpan.org/NoAuth/ReportBug.html?Queue=DHX-Tabbar>.  I will be notified, and then you'll
-automatically be notified of progress on your bug as I make changes.
-.SH "SUPPORT"
-.IX Header "SUPPORT"
-You can find documentation for this module with the perldoc command.
-.PP
-.Vb 1
-\&    perldoc DHX::Tabbar
-.Ve
-.PP
-You can also look for information at:
-.IP "\(bu" 4
-\&\s-1RT:\s0 \s-1CPAN\s0's request tracker (report bugs here)
-.Sp
-http://rt.cpan.org/NoAuth/Bugs.html?Dist=DHX\-Tabbar <http://rt.cpan.org/NoAuth/Bugs.html?Dist=DHX-Tabbar>
-.IP "\(bu" 4
-AnnoCPAN: Annotated \s-1CPAN\s0 documentation
-.Sp
-http://annocpan.org/dist/DHX\-Tabbar <http://annocpan.org/dist/DHX-Tabbar>
-.IP "\(bu" 4
-\&\s-1CPAN\s0 Ratings
-.Sp
-http://cpanratings.perl.org/d/DHX\-Tabbar <http://cpanratings.perl.org/d/DHX-Tabbar>
-.IP "\(bu" 4
-Search \s-1CPAN\s0
-.Sp
-http://search.cpan.org/dist/DHX\-Tabbar/ <http://search.cpan.org/dist/DHX-Tabbar/>
-.SH "ACKNOWLEDGEMENTS"
-.IX Header "ACKNOWLEDGEMENTS"
-.SH "LICENSE AND COPYRIGHT"
-.IX Header "LICENSE AND COPYRIGHT"
-Copyright 2013 Lucas Tiago de Moraes.
-.PP
-This program is free software; you can redistribute it and/or modify it
-under the terms of the the Artistic License (2.0). You may obtain a
-copy of the full license at:
-.PP
-<http://www.perlfoundation.org/artistic_license_2_0>
-.PP
-Any use, modification, and distribution of the Standard or Modified
-Versions is governed by this Artistic License. By using, modifying or
-distributing the Package, you accept this license. Do not use, modify,
-or distribute the Package, if you do not accept this license.
-.PP
-If your Modified Version has been derived from a Modified Version made
-by someone other than you, you are nevertheless required to ensure that
-your Modified Version complies with the requirements of this license.
-.PP
-This license does not grant you the right to use any trademark, service
-mark, tradename, or logo of the Copyright Holder.
-.PP
-This license includes the non-exclusive, worldwide, free-of-charge
-patent license to make, have made, use, offer to sell, sell, import and
-otherwise transfer the Package with respect to any patent claims
-licensable by the Copyright Holder that are necessarily infringed by the
-Package. If you institute patent litigation (including a cross-claim or
-counterclaim) against any party alleging that the Package constitutes
-direct or contributory patent infringement, then this Artistic License
-to you shall terminate on the date that such litigation is filed.
-.PP
-Disclaimer of Warranty: \s-1THE\s0 \s-1PACKAGE\s0 \s-1IS\s0 \s-1PROVIDED\s0 \s-1BY\s0 \s-1THE\s0 \s-1COPYRIGHT\s0 \s-1HOLDER\s0
-\&\s-1AND\s0 \s-1CONTRIBUTORS\s0 "\s-1AS\s0 \s-1IS\s0' \s-1AND\s0 \s-1WITHOUT\s0 \s-1ANY\s0 \s-1EXPRESS\s0 \s-1OR\s0 \s-1IMPLIED\s0 \s-1WARRANTIES\s0.
-\&\s-1THE\s0 \s-1IMPLIED\s0 \s-1WARRANTIES\s0 \s-1OF\s0 \s-1MERCHANTABILITY\s0, \s-1FITNESS\s0 \s-1FOR\s0 A \s-1PARTICULAR\s0
-\&\s-1PURPOSE\s0, \s-1OR\s0 NON-INFRINGEMENT \s-1ARE\s0 \s-1DISCLAIMED\s0 \s-1TO\s0 \s-1THE\s0 \s-1EXTENT\s0 \s-1PERMITTED\s0 \s-1BY\s0
-\&\s-1YOUR\s0 \s-1LOCAL\s0 \s-1LAW\s0. \s-1UNLESS\s0 \s-1REQUIRED\s0 \s-1BY\s0 \s-1LAW\s0, \s-1NO\s0 \s-1COPYRIGHT\s0 \s-1HOLDER\s0 \s-1OR\s0
-\&\s-1CONTRIBUTOR\s0 \s-1WILL\s0 \s-1BE\s0 \s-1LIABLE\s0 \s-1FOR\s0 \s-1ANY\s0 \s-1DIRECT\s0, \s-1INDIRECT\s0, \s-1INCIDENTAL\s0, \s-1OR\s0
-\&\s-1CONSEQUENTIAL\s0 \s-1DAMAGES\s0 \s-1ARISING\s0 \s-1IN\s0 \s-1ANY\s0 \s-1WAY\s0 \s-1OUT\s0 \s-1OF\s0 \s-1THE\s0 \s-1USE\s0 \s-1OF\s0 \s-1THE\s0 \s-1PACKAGE\s0,
-\&\s-1EVEN\s0 \s-1IF\s0 \s-1ADVISED\s0 \s-1OF\s0 \s-1THE\s0 \s-1POSSIBILITY\s0 \s-1OF\s0 \s-1SUCH\s0 \s-1DAMAGE\s0.
+Lucas Tiago de Moraes \- lucastiagodemoraes@gmail.com
